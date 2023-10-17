@@ -1,10 +1,10 @@
-import Posts from "./components/Post";
+import Posts from "./components/Posts";
 import {Main} from './components/Main';
 import {Acceptedorders} from './components/Acceptedorders';
 
 const AppRoutes = [
   {
-    path: '/posts',
+    path: '/Posts',
     element: <Posts />
   },
   {

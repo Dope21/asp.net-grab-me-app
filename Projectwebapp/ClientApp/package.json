@@ -1,5 +1,4 @@
 {
-  "proxy": "https://localhost:7155",
   "name": "projectwebapp",
   "version": "0.1.0",
   "private": true,

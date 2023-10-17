@@ -51,7 +51,7 @@ const Posts = () => {
         const options = {
             method: 'POST',
             headers: headers,
-            body: JSON.stringify(newPost)
+            body: JSON.stringify(newPost),
         }
         const result = await fetch(URL, options);
         if (result.ok) {
