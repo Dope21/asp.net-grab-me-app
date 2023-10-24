@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Projectwebapp.Models;
 using Projectwebapp.Services.interfaces;
 using System.Reflection;
+using Microsoft.AspNetCore.Cors;
 
 namespace Projectwebapp.Controllers
 {
+    [EnableCors("AllowLocalhost")]
     [Route("api/[controller]")]
     [ApiController]
     public class PostsController : ControllerBase
@@ -24,7 +26,7 @@ namespace Projectwebapp.Controllers
         }
 
         [HttpPatch]
-        public PostModel Update (PostModel model)
+        public PostModel Update(PostModel model)
         {
             return _postsService.Update(model);
         }
@@ -49,6 +51,6 @@ namespace Projectwebapp.Controllers
 
             return Ok();
         }
-        
+
     }
 }

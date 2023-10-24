@@ -11,6 +11,16 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddCors(options =>
 {
+    options.AddPolicy("AllowLocalhost", builder =>
+    {
+        builder.WithOrigins("https://localhost:44476")
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
+builder.Services.AddCors(options =>
+{
     options.AddDefaultPolicy(builder =>
     {
         builder.AllowAnyOrigin()
@@ -19,7 +29,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddTransient<IPostsService , PostsService>();
+builder.Services.AddTransient<IPostsService, PostsService>();
 builder.Services.AddSingleton<MyDataContext>();
 var app = builder.Build();
 
@@ -35,6 +45,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseCors("AllowLocalhost");
 
 
 app.MapControllerRoute(
