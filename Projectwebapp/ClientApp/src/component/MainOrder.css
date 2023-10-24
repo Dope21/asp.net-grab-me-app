@@ -1,0 +1,18 @@
+.container {
+    background-color: #8C87C3;
+    width: 90%;
+    margin-top: 50px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid black ;
+    border-radius: 5px;
+    font-family: 'Kanit', sans-serif;
+}
+.text{
+    color: white;
+    font-size: 20px;
+    font-family: 'Kanit', sans-serif;
+}
+ h1{
+    color: white;
+ }
