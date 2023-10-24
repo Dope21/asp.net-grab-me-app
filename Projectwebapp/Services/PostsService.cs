@@ -1,6 +1,7 @@
 ﻿using Projectwebapp.Data;
 using Projectwebapp.Models;
 using Projectwebapp.Services.interfaces;
+using System.Data;
 
 namespace Projectwebapp.Services
 {
@@ -16,25 +17,48 @@ namespace Projectwebapp.Services
         }
         public PostModel Create(PostModel model)
         {
-            var lastPost = _dateContext.Posts.LastOrDefault();
-            int newId = lastPost is null ? 1 : lastPost.Id + 1;
+            try
+            {
+                var lastPost = _dateContext.Posts.LastOrDefault();
+                int newId = lastPost is null ? 1 : lastPost.Id + 1;
+                model.Stateorder = true;
+                model.Id = newId;
+                _dateContext.Posts.Add(model);
 
-            model.Id = newId;
-            _dateContext.Posts.Add(model);
 
-            return model;
+                return model;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("เกิดข้อผิดพลาด: " + ex.Message);
+
+
+                return null;
+            }
         }
         public PostModel Update(PostModel model)
         {
-            var modelToUpdate = _dateContext.Posts.FirstOrDefault(x => x.Id == model.Id);
-            modelToUpdate.Name = model.Name;
-            modelToUpdate.Phone = model.Phone;
-            modelToUpdate.Menu = model.Menu;
-            modelToUpdate.amount = model.amount;
-            modelToUpdate.Discription = model.Discription;
-            modelToUpdate.Stateorder = "orderaccpet";
+            try
+            {
+                var Updatestate = _dateContext.Posts.FirstOrDefault(x => x.Id == model.Id); 
+                Updatestate.Name = model.Name;
+                Updatestate.Phone = model.Phone;
+                Updatestate.Shop = model.Shop;
+                Updatestate.Menu = model.Menu;
+                Updatestate.amount = model.amount;
+                Updatestate.Discription = model.Discription;
+                Updatestate.Stateorder = false;
 
-            return modelToUpdate;
+                return Updatestate;
+
+
+            }
+            catch(Exception ex)
+            {
+
+                return null;
+            }
+
         }
 
         public void Delete(int id)
@@ -54,3 +78,4 @@ namespace Projectwebapp.Services
         }
     }
 }
+

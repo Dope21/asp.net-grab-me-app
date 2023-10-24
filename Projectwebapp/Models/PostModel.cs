@@ -1,4 +1,6 @@
-﻿namespace Projectwebapp.Models
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace Projectwebapp.Models
 {
     public class PostModel
     {
@@ -16,7 +18,9 @@
 
         public string Discription { get; set; }
 
-        public string Stateorder { get; set; }
+        public bool Stateorder { get; set; }
+
+
 
 
     }

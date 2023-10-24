@@ -15,12 +15,12 @@ namespace Projectwebapp.Controllers
         public PostsController(IPostsService postsService)
         {
             _postsService = postsService;
-            
+
         }
         [HttpPost]
-        public PostModel Create (PostModel model)
+        public PostModel Create(PostModel model)
         {
-            return _postsService.Create (model);
+            return _postsService.Create(model);
         }
 
         [HttpPatch]
