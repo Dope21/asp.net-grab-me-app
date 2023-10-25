@@ -20,8 +20,8 @@ namespace Projectwebapp.Models
 
         public bool Stateorder { get; set; }
 
-
-
+        public object ConfirmInfo { get; set; }
 
     }
+
 }

@@ -1,6 +1,6 @@
 import Posts from "./components/Posts";
-import {Main} from './components/Main';
-import {Acceptedorders} from './components/Acceptedorders';
+import { Main } from './components/Main';
+import { Acceptedorders } from './components/Acceptedorders';
 
 const AppRoutes = [
   {
@@ -16,7 +16,7 @@ const AppRoutes = [
     element: <Posts />
   },
   {
-    path: '/acceptedorders',
+    path: '/accept',
     element: <Acceptedorders />
   }
 ];

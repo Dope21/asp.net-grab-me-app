@@ -1,26 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+
 .container-item {
     background-color: #EFEFF7;
     width: 90%;
     margin-top: 30px;
     margin: 0 auto;
     padding: 25px;
-    border: 1px solid black ;
+    border: 1px solid black;
     border-radius: 5px;
     margin-bottom: 15px;
     font-size: 25px;
     font-family: 'Kanit', sans-serif;
 }
+
 .container-nodata {
     background-color: #EFEFF7;
     width: 90%;
     margin-top: 30px;
     margin: 0 auto;
     padding: 25px;
-    
+
     margin-bottom: 15px;
 }
-.group-order{
+
+.group-order {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,57 +33,63 @@
     flex-wrap: wrap;
     background-color: #e2e2e2;
 }
-.item-count{
+
+.item-count {
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
     align-self: stretch;
     flex-wrap: wrap;
-    margin: 0 0 ;
+    margin: 0 0;
     font-size: 20px;
     color: #666666;
 }
-.btn-get{
+
+.btn-get {
     background-color: #7777f4;
-    color : #fff;
-    padding : 15px ;
-    border : rgb(255, 255, 255) solid 2px ;
+    color: #fff;
+    padding: 15px;
+    border: rgb(255, 255, 255) solid 2px;
     border-radius: 3px;
     font-size: 18px;
 }
-.suscess_btn{
+
+.suscess_btn {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     align-content: center;
 }
-.btn-get2{
+
+.btn-get2 {
     background-color: #7777f4;
-    
     cursor: pointer;
     margin-top: 15px;
-    color : #fff;
-    padding : 15px ;
-    border : rgb(255, 255, 255) solid 2px ;
+    color: #fff;
+    padding: 15px;
+    border: rgb(255, 255, 255) solid 2px;
     border-radius: 5px;
     font-size: 18px;
 }
 
-.detail_data{
+.detail_data {
     font-size: 20px;
     margin-bottom: 20px;
-    color:#666666;
+    color: #666666;
 }
-.ph_holder{
+
+.ph_holder {
     margin-right: 15px;
-    color:#666666;
+    color: #666666;
 }
-.count{
+
+.count {
     margin-right: 15px;
-    color:#666666;
+    color: #666666;
 }
-.popup{
+
+.popup {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -93,6 +102,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
+
 .close-btn {
     position: absolute;
     top: 10px;
@@ -102,8 +112,9 @@
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-  }
-  .header{
+}
+
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -113,57 +124,67 @@
 
     font-size: 20px;
 
-  }
-  h2{
-    margin: 0 0;
-    padding : 0 0;
-  }
+}
 
-  hr.solid {
+h2 {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+hr.solid {
     border-top: 3px solid #bbb;
-  }
-  .name_block{
+}
+
+.name_block {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     align-content: center;
     align-self: stretch;
     flex-direction: column;
-    margin: 0 0 ;
+    margin: 0 0;
     font-size: 20px;
     color: #666;
     width: 90%;
 
-    
-  }
-  .backdrop{
-    background-color: #000000 ;
-    opacity: 0.7;
-    position : fixed;
-    inset: 0;
-    
-  }
-  .input_form{
-            width: 80%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-  }
-  .input_form:focus {
-    border-color: #007bff; /* Change the border color when focused */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a box shadow */
+
 }
-.popup_block{
+
+.backdrop {
+    background-color: #000000;
+    opacity: 0.7;
+    position: fixed;
+    inset: 0;
+
+}
+
+.input_form {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input_form:focus {
+    border-color: #007bff;
+    /* Change the border color when focused */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    /* Add a box shadow */
+}
+
+.popup_block {
     display: flex;
     flex-direction: row;
     padding: 10px;
     border-bottom: 1px solid #666666;
 }
-.label_name{
-    margin-bottom:15px ;
+
+.label_name {
+    margin-bottom: 15px;
 }
-.input_form2{
+
+.input_form2 {
     width: 100%;
     height: 100px;
     padding: 10px;

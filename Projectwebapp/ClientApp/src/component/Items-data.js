@@ -10,14 +10,26 @@ function Items_data() {
     // For example:
 
     const confirmationData = {
-      id: data[activePopup].id,
+
       name: name, // Use the name state variable
       phone: phone, // Use the phone state variable
       detail: detail,
       // Add other relevant data needed for confirmation
     };
 
-    console.log(confirmationData)
+    const url = `https://localhost:7155/api/posts/${data[activePopup].id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json", // Set the content type to JSON
+      },
+      body: JSON.stringify(confirmationData), // Convert the data object to JSON format
+    })
+      .then(res => {
+        console.log(res.json())
+        window.location.href = "https://localhost:44476/accept";
+      })
+
 
     // Now, you can send this data to the server using an API request.
     // You can use the fetch or any other HTTP library for this purpose.

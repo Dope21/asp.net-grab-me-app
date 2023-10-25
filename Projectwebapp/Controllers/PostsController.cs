@@ -25,10 +25,10 @@ namespace Projectwebapp.Controllers
             return _postsService.Create(model);
         }
 
-        [HttpPatch]
-        public PostModel Update(PostModel model)
+        [HttpPut("{id}")]
+        public ConfirmModel Update(int id, [FromBody] ConfirmModel model)
         {
-            return _postsService.Update(model);
+            return _postsService.Update(id, model);
         }
 
         [HttpGet("{id}")]
@@ -41,6 +41,12 @@ namespace Projectwebapp.Controllers
         public IEnumerable<PostModel> GetAll()
         {
             return _postsService.Get();
+        }
+
+        [HttpGet("view")]
+        public IEnumerable<PostModel> GetAccept()
+        {
+            return _postsService.GetAccept();
         }
 
         [HttpDelete("{id}")]

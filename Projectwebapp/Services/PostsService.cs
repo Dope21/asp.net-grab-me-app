@@ -5,13 +5,14 @@ using System.Data;
 
 namespace Projectwebapp.Services
 {
+
     public class PostsService : IPostsService
     {
 
         private MyDataContext _dateContext;
 
-        public PostsService(MyDataContext dataContext) 
-        { 
+        public PostsService(MyDataContext dataContext)
+        {
             _dateContext = dataContext;
 
         }
@@ -21,8 +22,9 @@ namespace Projectwebapp.Services
             {
                 var lastPost = _dateContext.Posts.LastOrDefault();
                 int newId = lastPost is null ? 1 : lastPost.Id + 1;
-                model.Stateorder = true;
+                model.Stateorder = false;
                 model.Id = newId;
+                model.ConfirmInfo = null;
                 _dateContext.Posts.Add(model);
 
 
@@ -31,29 +33,39 @@ namespace Projectwebapp.Services
             catch (Exception ex)
             {
                 Console.WriteLine("เกิดข้อผิดพลาด: " + ex.Message);
-
-
                 return null;
             }
         }
-        public PostModel Update(PostModel model)
+        public ConfirmModel Update(int id, ConfirmModel model)
         {
             try
             {
-                var Updatestate = _dateContext.Posts.FirstOrDefault(x => x.Id == model.Id); 
-                Updatestate.Name = model.Name;
-                Updatestate.Phone = model.Phone;
-                Updatestate.Shop = model.Shop;
-                Updatestate.Menu = model.Menu;
-                Updatestate.amount = model.amount;
-                Updatestate.Discription = model.Discription;
-                Updatestate.Stateorder = false;
+                // return model;
+                var UpdateData = _dateContext.Posts.FirstOrDefault(x => x.Id == id);
+                if (UpdateData != null)
+                {
+                    ConfirmModel data = new ConfirmModel
+                    {
+                        Name = model.Name,
+                        Phone = model.Phone,
+                        Detail = model.Detail
+                    };
+                    // UpdateData.Name = model.Name;
+                    // UpdateData.Phone = model.Phone;
+                    // UpdateData.Shop = model.Shop;
+                    // UpdateData.Menu = model.Menu;
+                    // UpdateData.amount = model.amount;
+                    UpdateData.Stateorder = true;
+                    UpdateData.ConfirmInfo = data;
 
-                return Updatestate;
-
+                }
+                var test = _dateContext.Posts.FirstOrDefault(x => x.Id == id);
+                Console.WriteLine(test.Stateorder);
+                Console.WriteLine(test.ConfirmInfo);
+                return model;
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
                 return null;
@@ -67,6 +79,7 @@ namespace Projectwebapp.Services
             _dateContext.Posts.Remove(modelToDelete);
         }
 
+
         public PostModel Get(int id)
         {
             return _dateContext.Posts.FirstOrDefault(x => x.Id == id);
@@ -74,7 +87,12 @@ namespace Projectwebapp.Services
 
         public List<PostModel> Get()
         {
-            return _dateContext.Posts;
+            return _dateContext.Posts.Where(post => post.Stateorder != true).ToList();
+        }
+
+        public List<PostModel> GetAccept()
+        {
+            return _dateContext.Posts.Where(post => post.Stateorder == true).ToList();
         }
     }
 }
