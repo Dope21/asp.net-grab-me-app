@@ -170,6 +170,7 @@ function Items_data() {
           shop: item.shop,
           name: item.name,
           item: item.menu,
+          phone: item.phone,
           count: parseInt(item.amount, 10),
           detail: item.discription,
           confirm: item.confirmInfo,
@@ -208,7 +209,7 @@ function Items_data() {
           <div className='detail_data'>{item.detail}</div>
           <div className="group-order">
             <button className="btn-get" onClick={() => openPopup(index)}>more detail</button>
-            <div className="ph_holder">{item.name}</div>
+            <div className="ph_holder">{item.name} โทร: {item.phone}</div>
 
           </div>
           {activePopup === index && (

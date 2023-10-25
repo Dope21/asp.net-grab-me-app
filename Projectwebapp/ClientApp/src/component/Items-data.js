@@ -4,13 +4,8 @@ import './Items.css';
 function Items_data() {
 
   const handleConfirmPickup = () => {
-    // Here, you can add the logic to confirm the item pickup.
-    // This may involve making an API request to the server.
-    // You can use the data associated with the current item (e.g., item.shop, item.name, etc.) to send the confirmation.
-    // For example:
 
     const confirmationData = {
-
       name: name, // Use the name state variable
       phone: phone, // Use the phone state variable
       detail: detail,
@@ -30,12 +25,6 @@ function Items_data() {
         window.location.href = "https://localhost:44476/accept";
       })
 
-
-    // Now, you can send this data to the server using an API request.
-    // You can use the fetch or any other HTTP library for this purpose.
-    // Make the API request here to confirm the pickup.
-
-    // After the confirmation is successful, you can close the popup if needed.
     closePopup();
   };
 
@@ -64,6 +53,7 @@ function Items_data() {
           shop: item.shop,
           name: item.name,
           item: item.menu,
+          phone: item.phone,
           count: parseInt(item.amount, 10),
           detail: item.discription,
         }));
@@ -86,7 +76,7 @@ function Items_data() {
     <div>
       <h1>List of Items</h1>
       {data.map((item, index) => (
-        <div className="container-item">
+        <div className="container-item" key={index}>
           <p>ร้าน : {item.shop}</p>
           <p>สิ่งที่ฝากซื้อ</p>
           <div className="item-count">
@@ -97,8 +87,7 @@ function Items_data() {
           <div className='detail_data'>{item.detail}</div>
           <div className="group-order">
             <button className="btn-get" onClick={() => openPopup(index)}>เราซื้อให้</button>
-            <div className="ph_holder">{item.name}</div>
-
+            <div className="ph_holder">{item.name} โทร: {item.phone}</div>
           </div>
           {activePopup === index && (
             <div>

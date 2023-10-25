@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
-ul, li {
+
+ul,
+li {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -37,10 +39,12 @@ ul, li {
     color: #6d61d4;
     font-weight: bold;
 }
-.ul-text{
-    color:#6d61d4 ;
+
+.ul-text {
+    color: #6d61d4;
     font-size: 30px;
 }
-.main{
+
+.active-nav {
     font-weight: bold;
 }
