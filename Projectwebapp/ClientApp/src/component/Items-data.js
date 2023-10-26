@@ -5,6 +5,22 @@ function Items_data() {
 
   const handleConfirmPickup = () => {
 
+    // Validation checks
+    if (typeof name !== 'string' || name.trim() === '') {
+      alert('Please enter a valid name.');
+      return;
+    }
+
+    if (typeof phone !== 'string' || !/^\d{10}$/.test(phone)) {
+      alert('Please enter a valid 10-digit phone number.');
+      return;
+    }
+
+    if (typeof detail !== 'string' || detail.trim() === '') {
+      alert('Please enter a valid detail.');
+      return;
+    }
+
     const confirmationData = {
       name: name, // Use the name state variable
       phone: phone, // Use the phone state variable

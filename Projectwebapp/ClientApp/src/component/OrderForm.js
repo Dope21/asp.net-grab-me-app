@@ -8,10 +8,37 @@ function OrderForm() {
 
   const handleOrderForm = (e) => {
     e.preventDefault()
-    // Here, you can add the logic to confirm the item pickup.
-    // This may involve making an API request to the server.
-    // You can use the data associated with the current item (e.g., item.shop, item.name, etc.) to send the confirmation.
-    // For example:
+
+    // Validation checks
+    if (typeof name !== 'string' || name.trim() === '') {
+      alert('Please enter a valid name.');
+      return;
+    }
+
+    if (typeof phone !== 'string' || !/^\d{10}$/.test(phone)) {
+      alert('Please enter a valid 10-digit phone number.');
+      return;
+    }
+
+    if (typeof shop !== 'string' || shop.trim() === '') {
+      alert('Please enter a valid shop.');
+      return;
+    }
+
+    if (typeof menu !== 'string' || menu.trim() === '') {
+      alert('Please enter a valid menu.');
+      return;
+    }
+
+    if (typeof amount !== 'string' || !/^[1-9]\d*$/.test(amount)) {
+      alert('Please enter a valid amount as a positive integer.');
+      return;
+    }
+
+    if (typeof discription !== 'string' || discription.trim() === '') {
+      alert('Please enter a valid discription.');
+      return;
+    }
 
     const OrderForm = {
       Name: name,
@@ -37,10 +64,6 @@ function OrderForm() {
         console.log(res.json())
         window.location.href = "https://localhost:44476/";
       })
-
-    // Now, you can send this data to the server using an API request.
-    // You can use the fetch or any other HTTP library for this purpose.
-    // Make the API request here to confirm the pickup.
   };
 
   const [name, setName] = useState('');
