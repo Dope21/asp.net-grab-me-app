@@ -65,8 +65,8 @@ function Items_data() {
           <p>ร้านละเอียดเพิ่มเติม</p>
           <div className='detail_data'>{item.detail}</div>
           <div className="group-order">
-            <button className="btn-get" onClick={() => openPopup(index)}>more detail</button>
-            <div className="ph_holder">{item.name} โทร: {item.phone}</div>
+            <button className="btn-get" onClick={() => openPopup(index)}>ผู้รับ</button>
+            <div className="ph_holder">ผู้ฝาก: {item.name} เบอร์โทรติดต่อ: {item.phone}</div>
 
           </div>
           {activePopup === index && (

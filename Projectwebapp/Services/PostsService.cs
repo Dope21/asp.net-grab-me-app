@@ -26,8 +26,6 @@ namespace Projectwebapp.Services
                 model.Id = newId;
                 model.ConfirmInfo = null;
                 _dateContext.Posts.Add(model);
-
-
                 return model;
             }
             catch (Exception ex)
@@ -50,18 +48,11 @@ namespace Projectwebapp.Services
                         Phone = model.Phone,
                         Detail = model.Detail
                     };
-                    // UpdateData.Name = model.Name;
-                    // UpdateData.Phone = model.Phone;
-                    // UpdateData.Shop = model.Shop;
-                    // UpdateData.Menu = model.Menu;
-                    // UpdateData.amount = model.amount;
                     UpdateData.Stateorder = true;
                     UpdateData.ConfirmInfo = data;
 
                 }
                 var test = _dateContext.Posts.FirstOrDefault(x => x.Id == id);
-                Console.WriteLine(test.Stateorder);
-                Console.WriteLine(test.ConfirmInfo);
                 return model;
 
             }
