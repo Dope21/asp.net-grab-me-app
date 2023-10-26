@@ -22,5 +22,5 @@ This is an MVC ASP.Net + React project.
     dotnet run
     ```
 - Don't forget it require dotnet in available to run before using ```dotnet run```
-- If found issue to available to run react app please delete ```rm ClientApp/package-lock.json``` before using ```npm install```
+- If you encounter issues when running the React app, consider deleting the ```rm ClientApp/package-lock.json``` before using ```npm install```
 
