@@ -202,3 +202,90 @@
     border-radius: 5px;
     font-size: 16px;
 }
+
+@media (max-width: 768px) {
+    .navbar{
+        width: 90%;
+    }
+    .navbar ul {
+        flex-direction: column; /* Display each li on a new row */
+        align-items: center; /* Center the items vertically */
+        padding: 20px;
+    }
+    .navbar  {
+        flex-direction: column; /* Display each li on a new row */
+        align-items: center; /* Center the items vertically */
+        padding: 20px;
+    }
+    
+    .navbar li {
+        margin: 10px 0;
+    }
+    
+    .logo {
+        font-size: 36px;
+    }
+    
+    .ul-text {
+        font-size: 24px;
+    }
+    .container-item {
+        background-color: #f6f6f6;
+        width: 80%;
+        margin-top: 30px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 25px;
+        font-family: 'Kanit', sans-serif;
+    }
+    .group-order {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        font-size: 20px;
+        flex-wrap: wrap;
+        background-color: #e2e2e2;
+    }
+    .popup{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 75%;
+        height: 46%;
+        transform: translate(-50%, -50%);
+        background: #f3f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+}
+
+  
+  @media (min-width: 769px) and (max-width: 1200px) {
+    .navbar{
+        width: 90%;
+    }
+    .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 70%;
+        height: 33%;
+        transform: translate(-50%, -50%);
+        background: #f3f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+    
+  }
+  
+  @media (min-width: 1201px) {
+    /* Styles for screens wider than 1024px (desktop) */
+  }
