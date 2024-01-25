@@ -1,26 +1,4 @@
-# grab-me-app
+# Grab-me-app
 
-This is an MVC ASP.Net + React project.
-
-## Getting Started
-
-- Please run the following command
-
-    ```bash
-    git clone https://github.com/WEB-APP-CEDT-2023/ProjectWebApp.git
- 
-    cd ProjectWebapp/Projectwebapp/ClientApp
-    
-    npm install
-    ```
-
-- To run dotnet app the following command
-
-    ```bash
-    cd ProjectWebapp/Projectwebapp/
-    
-    dotnet run
-    ```
-- Don't forget it require dotnet in available to run before using ```dotnet run```
-- If you encounter issues when running the React app, consider delete ```rm ClientApp/package-lock.json``` before using ```npm install```
-
+CRUD application enables users to post food ordering requests, with other users able to commit to purchasing
+the requested food for the requester.
