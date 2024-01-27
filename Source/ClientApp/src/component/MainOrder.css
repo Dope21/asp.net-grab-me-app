@@ -1,0 +1,41 @@
+.container {
+    background-color: #8C87C3;
+    width: 90%;
+    margin-top: 50px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid black ;
+    border-radius: 5px;
+    font-family: 'Kanit', sans-serif;
+}
+.text{
+    color: white;
+    font-size: 20px;
+    font-family: 'Kanit', sans-serif;
+}
+ h1{
+    color: white;
+ }
+ @media (max-width: 768px) {
+    .container {
+        background-color: #8C87C3;
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 25px;
+        font-family: 'Kanit', sans-serif;
+    }
+    
+  }
+  
+  @media (min-width: 769px) and (max-width: 1200px) {
+    /* Styles for screens between 769px and 1024px wide (tablets) */
+  }
+  
+  @media (min-width: 1201px) {
+    /* Styles for screens wider than 1024px (desktop) */
+  }
