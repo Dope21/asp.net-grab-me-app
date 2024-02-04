@@ -2,3 +2,4 @@
 **/.vs
 **/.vscode
 **/bin
+/Testing/output/*
