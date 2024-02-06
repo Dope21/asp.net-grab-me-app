@@ -8,8 +8,18 @@ the requested food for the requester.
 docker compose up --build -d
 ```
 
-## Run Test Script
+## Unit Testing
+
+_Your Directory Need To Be Root Directory._
+
+### Install Test Requirements
+
+```sh
+pip install -r ./Testing/requirements.txt
 ```
+
+### Run Test Script
+
+```sh
 ./Testing/run-test-script.sh
 ```
-_Your Directory need to be Root Directory._
