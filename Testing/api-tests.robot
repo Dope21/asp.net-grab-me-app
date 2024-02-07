@@ -7,6 +7,13 @@ ${content-type}   application/json
 ${post_data}    # store the response post data
 
 *** Keywords ***
+Log Response Dict
+    [Arguments]   ${post_data}
+    Log To Console    \n
+    FOR    ${key}   IN    @{post_data.keys()}
+    Log To Console    ${key}:${post_data['${key}']}
+    END
+    Log To Console    \n
 
 *** Test Cases ***
 
@@ -26,7 +33,11 @@ Test Create New Post
     ${res}=   POST    ${base_url}    json=${body}    headers=${headers}    expected_status=200
     ${post}=   Set Variable    ${res.json()}
     Set Suite Variable    ${post}
-    Log To Console   ${post}
+    Log Response Dict    ${post}
+
+Test Get Post By ID
+    ${res}=   GET   ${base_url}/${post['id']}   expected_status=200
+    Log Response Dict    ${res.json()}
 
 Test Delete Post
     ${res}=   DELETE    ${base_url}/${post['id']}   expected_status=200
