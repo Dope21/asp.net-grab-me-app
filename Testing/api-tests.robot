@@ -43,6 +43,9 @@ Test Accept Order
     ${headers}=    Create Dictionary    Content-Type=${content-type}
     ${res}=   PUT   ${base_url}/${post['id']}   json=${body}   headers=${headers}   expected_status=200
 
+Test Get Accepted Order
+    ${res}=   GET   ${base_url}/view    expected_status=200
+
 Test Get Post By ID
     ${res}=   GET   ${base_url}/${post['id']}   expected_status=200
     Log Response Dict    ${res.json()}
