@@ -35,6 +35,14 @@ Test Create New Post
     Set Suite Variable    ${post}
     Log Response Dict    ${post}
 
+Test Accept Order 
+    ${body}=    Create Dictionary
+    ...   name=test confirm
+    ...   phone=8888888888
+    ...   detail=bla bla bla...
+    ${headers}=    Create Dictionary    Content-Type=${content-type}
+    ${res}=   PUT   ${base_url}/${post['id']}   json=${body}   headers=${headers}   expected_status=200
+
 Test Get Post By ID
     ${res}=   GET   ${base_url}/${post['id']}   expected_status=200
     Log Response Dict    ${res.json()}
