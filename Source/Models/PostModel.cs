@@ -16,7 +16,7 @@ namespace Projectwebapp.Models
 
         public string amount { get; set; }
 
-        public string Discription { get; set; }
+        public string Description { get; set; }
 
         public bool Stateorder { get; set; }
 

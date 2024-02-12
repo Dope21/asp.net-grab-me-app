@@ -27,7 +27,7 @@ Test Create New Post
     ...   Shop=Test Shop    
     ...   Menu=test menu    
     ...   Amount=1    
-    ...   Discription=bla bla bla...   
+    ...   Description=bla bla bla...   
     ...   ConfirmInfo=Create Dictionary
     ${headers}=    Create Dictionary    Content-Type=${content-type}
     ${res}=   POST    ${base_url}    json=${body}    headers=${headers}    expected_status=200

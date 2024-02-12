@@ -33,8 +33,8 @@ function OrderForm() {
       return;
     }
 
-    if (typeof discription !== 'string' || discription.trim() === '') {
-      alert('Please enter a valid discription.');
+    if (typeof description !== 'string' || description.trim() === '') {
+      alert('Please enter a valid description.');
       return;
     }
 
@@ -44,7 +44,7 @@ function OrderForm() {
       Shop: shop,
       Menu: menu,
       Amount: amount,
-      Discription: discription,
+      Discription: description,
       ConfirmInfo: {}
     };
 
@@ -67,7 +67,7 @@ function OrderForm() {
   const [shop, setShop] = useState('');
   const [menu, setMenu] = useState('');
   const [amount, setAmount] = useState('');
-  const [discription, setDiscription] = useState('');
+  const [description, setDescription] = useState('');
 
   return (
     <>
@@ -111,7 +111,7 @@ function OrderForm() {
           <div className='popup_block'>
             <div className="name_block">
               <label className='label_name'>รายละเอียดเพิ่มเติม</label>
-              <textarea className='input_form2' type='text' name="name" placeholder='Enter your detail' value={discription} onChange={(e) => setDiscription(e.target.value)}></textarea>
+              <textarea className='input_form2' type='text' name="name" placeholder='Enter your detail' value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
             </div>
           </div>
 

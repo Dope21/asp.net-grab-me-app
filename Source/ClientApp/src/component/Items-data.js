@@ -71,7 +71,7 @@ function Items_data() {
           item: item.menu,
           phone: item.phone,
           count: parseInt(item.amount, 10),
-          detail: item.discription,
+          detail: item.description,
         }));
         setData(transformedData); // Set the fetched data to the 'data' state
       })

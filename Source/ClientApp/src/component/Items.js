@@ -33,7 +33,7 @@ function Items_data() {
           item: item.menu,
           phone: item.phone,
           count: parseInt(item.amount, 10),
-          detail: item.discription,
+          detail: item.description,
           confirm: item.confirmInfo,
         }));
         setData(transformedData); // Set the fetched data to the 'data' state
