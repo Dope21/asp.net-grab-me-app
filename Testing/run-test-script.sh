@@ -4,3 +4,4 @@ then
 fi
 
 robot -d Testing/output Testing/api-tests.robot
+robot -d Testing/output Testing/ui-tests.robot
