@@ -1,7 +1,7 @@
-if [ ! -d "Testing/output"]
+if [ ! -d "output"]
 then
-  mkdir Testing/output
+  mkdir output
 fi
 
-robot -d Testing/output Testing/api-tests.robot
-robot -d Testing/output Testing/ui-tests.robot
+robot -d output api-tests.robot
+robot -d output ui-tests.robot

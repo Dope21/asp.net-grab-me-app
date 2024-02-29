@@ -10,16 +10,16 @@ docker compose up --build -d
 
 ## Unit Testing
 
-_Your Directory Need To Be Root Directory._
+Your working directory should be in Testing
 
 ### Install Test Requirements
 
 ```sh
-pip install -r ./Testing/requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Run Test Script
 
 ```sh
-./Testing/run-test-script.sh
+./run-test-script.sh
 ```
