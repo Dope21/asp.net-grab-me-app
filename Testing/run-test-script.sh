@@ -1,6 +1,6 @@
 if [ ! -d "Testing/output"]
 then
-  mkdir Testring/output
+  mkdir Testing/output
 fi
 
 robot -d Testing/output Testing/api-tests.robot
